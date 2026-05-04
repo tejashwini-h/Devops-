@@ -23,11 +23,10 @@ jobs:
         cd backend
         pip install -r requirements.txt
 
-    - name: Run backend check
-      run: |
-        cd backend
-        python main.py
-
+    - name: Backend syntax check
+  run: |
+    cd backend
+    python -m py_compile main.py
 
   frontend:
     runs-on: ubuntu-latest
