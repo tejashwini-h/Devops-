@@ -1,0 +1,156 @@
+/* Base styles */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Logo styles */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* Animation keyframes */
+@keyframes logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slide-down {
+  0% { top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card styles */
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Video container and video element styles */
+.aspect-video {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+/* Video element styles */
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Mirror effect for front camera */
+.mirror {
+  transform: scaleX(-1);
+}
+
+/* Status indicator animation */
+.animate-glow-pulse {
+  animation: glow-pulse 1.5s ease-in-out infinite;
+}
+
+/* Loading spinner */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .aspect-video {
+    min-height: 300px;
+  }
+}
+
+/* Ensure proper display of video in all browsers */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+/* This will hide the native controls in Firefox */
+video::-moz-media-controls {
+  display: none !important;
+}
+
+/* This will hide the native controls in Edge */
+video::-ms-reveal {
+  display: none !important;
+}
+
+/* Ensure the video is always visible and properly sized */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Error message styling */
+.error-message {
+  color: #ef4444;
+  background-color: #fef2f2;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+/* Button styles */
+.button {
+  transition: all 0.2s ease-in-out;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
