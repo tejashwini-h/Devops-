@@ -1,4 +1,4 @@
-name: DevOps CI Pipeline
+name: DevOps CI Pipelinxe
 
 on:
   push:
@@ -10,42 +10,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.10"
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
 
-    - name: Install backend dependencies
-      run: |
-        cd backend
-        pip install -r requirements.txt
+      - name: Install backend dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
 
-    - name: Backend syntax check
-      run: |
-    cd backend
-    python -m py_compile main.py
+      - name: Backend syntax check
+        run: |
+          cd backend
+          python -m py_compile main.py
 
-  frontend:
+
+  frontend:   # 👈 MUST be on new line (VERY IMPORTANT)
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Node
-      uses: actions/setup-node@v3
-      with:
-        node-version: "18"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
 
-    - name: Install frontend dependencies
-      run: |
-        cd frontend
-        npm install
+      - name: Install frontend dependencies
+        run: |
+          cd frontend
+          npm install
 
-    - name: Build frontend
-      run: |
-        cd frontend
-        npm run build
+      - name: Build frontend
+        run: |
+          cd frontend
+          npm run build
