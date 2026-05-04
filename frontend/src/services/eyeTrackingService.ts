@@ -14,7 +14,7 @@ export class EyeTrackingService {
 
   constructor() {
     // Use environment variable or default to local development URL
-    this.apiBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+    this.apiBaseUrl = import.meta.env.VITE_API_URL || 'https://devops-x0lk.onrender.com';
   }
 
   // Initialize WebSocket connection

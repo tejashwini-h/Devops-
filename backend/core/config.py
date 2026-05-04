@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     FACE_MESH_MODEL: str = os.getenv("FACE_MESH_MODEL", "models/face_landmarker.task")
     
     # WebSocket
-    WEBSOCKET_URL: str = os.getenv("WEBSOCKET_URL", "ws://localhost:8000/ws")
+    WEBSOCKET_URL: str = os.getenv("WEBSOCKET_URL", "wss://devops-x0lk.onrender.com")
     
     # CORS
     FRONTEND_URL: str = os.getenv("FRONTEND_URL", "http://localhost:5173")
